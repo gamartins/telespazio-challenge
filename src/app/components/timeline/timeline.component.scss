@@ -1,0 +1,61 @@
+.container {
+  width: calc(100% - 4px);
+  height: 35px;
+  border: 2px solid black;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  background-color: black;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.container-item {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.container-item.timeline {
+  &-active {
+    z-index: 3;
+  }
+
+  &-warning {
+    background-color: #EB1C23;
+  }
+
+  &-error {
+    background-color: #FFBF17;
+  }
+
+  &-info {
+    background-color: #3366CC;
+  }
+}
+
+.container-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  display: none;
+  
+  &-active {
+    display: block;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="container" #container>
+  <div
+    class="container-item"
+    (mouseover)="mouseOverItem(i)"
+    (mouseleave)="mouseLeaveItem()"
+    [style.left.px]="spacingList[i] || spacing"
+    [ngClass]="{
+      'timeline-active': i === activeElement,
+      'timeline-warning': item.level === 'WARNING',
+      'timeline-error': item.level === 'ERROR',
+      'timeline-info': item.level === 'INFO',
+    }"
+    *ngFor="let item of dataSource; let i = index"
+  ></div>
+
+  <div
+    class="container-overlay"
+    [ngClass]="{ 'container-overlay-active': activeElement !== null }"
+  ></div>
+</div>

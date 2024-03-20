@@ -1,1 +1,15 @@
-<h1>Hello, {{ title }}</h1>
+<div style="padding: 16px;">
+  <app-timeline
+    [dataSource]="dataList"
+    [activeElement]="activeTimelineItem"
+    (activeElementChange)="timelineaActiveElementChange($event)"
+  ></app-timeline>
+</div>
+
+<div style="padding: 16px; padding-top: 0;">
+  <app-table
+    [dataSource]="dataList"
+    [activeTableItem]="activeTableItem"
+    (activeElementChange)="tableActiveElementChange($event)"
+  ></app-table>
+</div>
